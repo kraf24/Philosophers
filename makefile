@@ -6,7 +6,7 @@
 #    By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/23 19:34:49 by gpinchuk          #+#    #+#              #
-#    Updated: 2022/07/30 18:35:31 by gpinchuk         ###   ########.fr        #
+#    Updated: 2022/08/10 14:36:54 by gpinchuk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ all: $(NAME)
 
 $(NAME):
 	@$(CC) $(FLAGS) $(SRC_F) -o $@
-	@echo "$(GREEN)pipex compiled!$(DEF_COLOR)"
+	@echo "$(GREEN)philosophers compiled!$(DEF_COLOR)"
 
 clean:
 	@rm -rf $(OBJ)

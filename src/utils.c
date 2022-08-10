@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 17:37:12 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/04 17:04:44 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/08/10 14:39:22 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,19 +58,37 @@ int	ft_atoi(const char *str)
 	return (a);
 }
 
-int diff(unsigned long long pre, unsigned long long post)
-{
-	return(pre - post);
-}
-
 void	print_output(t_philo *philo, char *message)
 {
-	pthread_mutex_lock(&philo->data->write);
+	if (diff(c_time(), philo->lst_meal) >= philo->data->time_to_die \
+											&& philo->data->is_dead)
+	{
+		philo->data->is_dead = 0;
+		pthread_mutex_lock(&philo->data->write);
+		printf("%d ", diff(c_time(), philo->data->start));
+		printf("%d ", philo->numer);
+		printf("%s\n", "died");
+		pthread_mutex_unlock(&philo->data->write);
+		return ;
+	}
+	if (philo->data->is_dead)
+	{
+		pthread_mutex_lock(&philo->data->write);
+		printf("%d ", diff(c_time(), philo->data->start));
+		printf("%d ", philo->numer);
+		printf("%s\n", message);
+		pthread_mutex_unlock(&philo->data->write);
+	}
+}
 
-	printf("%d ", diff(c_time(), philo->data->start));
-	printf("%d ", diff(c_time(), philo->lst_meal));
-	printf("%d ", philo->numer);
-	printf("%s\n", message);
-	
-	pthread_mutex_unlock(&philo->data->write);
+void	absolute_sleep(int time)
+{
+	unsigned long long	i;
+
+	i = c_time();
+	while (1)
+	{
+		if (diff(c_time(), i) >= time)
+			break ;
+	}
 }
