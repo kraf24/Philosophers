@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 13:08:06 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/11 15:40:04 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/09/01 12:27:39 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,17 @@ int	init_philo(int n, t_data *data)
 int	init(char *argv[], int argc, t_data *data)
 {
 	data->num_of_philo = ft_atoi(argv[1]);
+	if (data->num_of_philo <= 0)
+		return (3);
 	data->time_to_die = ft_atoi(argv[2]);
+	if (data->time_to_die <= 0)
+		return (3);
 	data->time_to_eat = ft_atoi(argv[3]);
+	if (data->time_to_eat <= 0)
+		return (3);
 	data->time_to_sleep = ft_atoi(argv[4]);
+	if (data->time_to_sleep <= 0)
+		return (3);
 	if (argc == 6)
 		data->num_of_meals = ft_atoi(argv[5]);
 	else

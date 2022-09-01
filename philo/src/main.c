@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/30 17:37:27 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/10 15:53:01 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/08/25 15:14:09 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@ int	main(int argc, char *argv[])
 
 	if (argc < 5)
 	{
-		printf("pipi pupu uuuuu");
+		printf("ERROR");
 		return (0);
 	}
 	if (ft_atoi(argv[1]) > 300)
 	{
-		printf("error");
+		printf("ERROR");
 		return (0);
 	}
 	data = malloc(sizeof(t_data) * 1);

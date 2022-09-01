@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 15:51:36 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/11 16:06:22 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/08/31 14:58:09 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	exit_function(int n, t_data *data)
 {
 	int	i;
-	int ret;
+	int	ret;
 
 	i = 0;
 	while (i <= n)
@@ -23,10 +23,10 @@ void	exit_function(int n, t_data *data)
 		waitpid(-1, &ret, 0);
 		if (ret != 0)
 		{
-				i =0;
-				while (i++ < data->num_of_philo)
-					kill(data->philo[i].proces, 15);
-				break;		
+			i = 0;
+			while (i++ < data->num_of_philo)
+				kill(data->philo[i].proces, 42);
+			break ;
 		}
 		i++;
 	}

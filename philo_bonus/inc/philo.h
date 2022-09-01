@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/10 15:14:23 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/11 15:50:06 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/08/25 15:25:41 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
 # include <string.h>
 # include <pthread.h>
 # include <semaphore.h>
-#include <fcntl.h>
-#include <sys/stat.h>
+# include <fcntl.h>
+# include <sys/stat.h>
 
 typedef struct s_philo
 {

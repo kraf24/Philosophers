@@ -6,7 +6,7 @@
 /*   By: gpinchuk <gpinchuk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/04 16:46:27 by gpinchuk          #+#    #+#             */
-/*   Updated: 2022/08/11 15:34:54 by gpinchuk         ###   ########.fr       */
+/*   Updated: 2022/08/31 15:02:20 by gpinchuk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ void	*philosophers(void *arg)
 		print_output(philo, "died");
 		return (NULL);
 	}
-	if (philo->numer % 2)
-		usleep(data->time_to_eat * 1000);
 	while (data->is_dead)
 	{
 		meal(philo);
@@ -37,7 +35,5 @@ void	*philosophers(void *arg)
 		absolute_sleep(data->time_to_sleep);
 		print_output(philo, "is thinking");
 	}
-	if(!data->is_dead)
-		exit(0);
-	exit(1);
+	exit(0);
 }
