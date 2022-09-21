@@ -40,8 +40,6 @@ int	init_fork(int n, t_data *data)
 			return (0);
 		n--;
 	}
-	if (pthread_mutex_init(&data->meal, NULL))
-		return (0);
 	if (pthread_mutex_init(&data->write, NULL))
 		return (0);
 	return (1);

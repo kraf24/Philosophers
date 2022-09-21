@@ -34,7 +34,6 @@ typedef struct s_data
 {
 	unsigned long long	start;
 	pthread_mutex_t		fork[300];
-	pthread_mutex_t		meal;
 	pthread_mutex_t		write;
 	t_philo				philo[300];
 	int					is_dead;

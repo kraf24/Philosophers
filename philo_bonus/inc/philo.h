@@ -38,7 +38,6 @@ typedef struct s_data
 	unsigned long long	start;
 	t_philo				philo[300];
 	sem_t				*forks;
-	sem_t				*meal;
 	sem_t				*write;
 	sem_t				*death;
 	int					is_dead;

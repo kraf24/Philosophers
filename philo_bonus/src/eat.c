@@ -21,11 +21,9 @@ void	meal(t_philo *philo)
 	print_output(philo, " has taken a fork");
 	sem_wait(data->forks);
 	print_output(philo, " has taken a fork");
-	sem_wait(data->meal);
 	print_output(philo, "is eating");
-	philo->lst_meal = c_time();
-	sem_post(data->meal);
 	absolute_sleep(data->time_to_eat);
+	philo->lst_meal = c_time();
 	philo->meal_times++;
 	sem_post(data->forks);
 	sem_post(data->forks);

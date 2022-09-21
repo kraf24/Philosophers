@@ -35,7 +35,6 @@ void	destroy(int n, t_data *data)
 		pthread_mutex_destroy(&data->fork[n]);
 		i++;
 	}
-	pthread_mutex_destroy(&data->meal);
 	pthread_mutex_destroy(&data->write);
 }
 

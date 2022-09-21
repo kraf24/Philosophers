@@ -28,10 +28,8 @@ int	init_sem(int n, t_data *data)
 {
 	sem_unlink("forks");
 	sem_unlink("write");
-	sem_unlink("meal");
 	sem_unlink("death");
 	data->forks = sem_open("forks", O_CREAT, S_IRWXU, data->num_of_philo);
-	data->meal = sem_open("meal", O_CREAT, S_IRWXU, 1);
 	data->write = sem_open("write", O_CREAT, S_IRWXU, 1);
 	data->death = sem_open("death", O_CREAT, S_IRWXU, 1);
 	return (1);

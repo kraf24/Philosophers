@@ -35,11 +35,9 @@ void	exit_function(int n, t_data *data)
 void	destroy(int n, t_data *data)
 {
 	sem_close(data->forks);
-	sem_close(data->meal);
 	sem_close(data->write);
 	sem_unlink("forks");
 	sem_unlink("write");
-	sem_unlink("meal");
 }
 
 void	ending_check(t_data *data)
